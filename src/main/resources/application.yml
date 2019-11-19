@@ -1,0 +1,6 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://admin:zia123123@ds347298.mlab.com:47298/heroku_3cxrdx89
+      rest:
+        base-path: /api
