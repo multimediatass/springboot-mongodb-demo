@@ -1,4 +1,6 @@
-package mulmed.springbootmongodbdemo;
+package mulmed.springbootmongodbdemo.Entity;
+
+import java.util.List;
 
 public class Barang {
     private String namaBarang;
@@ -6,8 +8,7 @@ public class Barang {
     private int hargaSewa;
     private boolean available;
 
-    public Barang() {
-    }
+
 
 
     public Barang(String namaBarang, int jumlahBarang, int hargaSewa, boolean available) {
@@ -47,5 +48,16 @@ public class Barang {
 
     public void setAvailable(boolean available) {
         this.available = available;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Barang{" +
+                "namaBarang='" + namaBarang + '\'' +
+                ", jumlahBarang=" + jumlahBarang +
+                ", hargaSewa=" + hargaSewa +
+                ", available=" + available +
+                '}';
     }
 }

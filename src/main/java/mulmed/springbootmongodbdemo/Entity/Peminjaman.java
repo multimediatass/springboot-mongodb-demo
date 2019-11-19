@@ -1,12 +1,12 @@
-package mulmed.springbootmongodbdemo;
+package mulmed.springbootmongodbdemo.Entity;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.IndexDirection;
 import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 
@@ -15,6 +15,7 @@ public class Peminjaman {
 
     @Id
     private String id;
+    @DBRef(lazy = true)
     private User user;
     private List<Barang> namaBarang;
     private int lamaMeminjam;
@@ -38,6 +39,7 @@ public class Peminjaman {
         return id;
     }
 
+
     public User getUser() {
         return user;
     }
@@ -57,4 +59,31 @@ public class Peminjaman {
     public int getTotalBayar() {
         return totalBayar;
     }
+
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public void setNamaBarang(List<Barang> namaBarang) {
+        this.namaBarang = namaBarang;
+    }
+
+    public void setLamaMeminjam(int lamaMeminjam) {
+        this.lamaMeminjam = lamaMeminjam;
+    }
+
+    public void setTanggalMeminjam(String tanggalMeminjam) {
+        this.tanggalMeminjam = tanggalMeminjam;
+    }
+
+    public void setTotalBayar(int totalBayar) {
+        this.totalBayar = totalBayar;
+    }
+
+
 }
